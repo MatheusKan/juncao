@@ -16,20 +16,22 @@ conteúdo, frequência e nota mínimas para aprovação do aluno. Até o pessoa 
         let desc = ''
         let freq = ''
         let nota = ''
-        while (nome != 'sair' || freq != 'sair' || desc != 'sair' || nota != 'sair') {
-            alert('Digite sair para encerrar o programa')
-            nome = prompt('Digite o nome da disciplina: ')
-            if (nome.toLowerCase() == 'sair')
+        while (true) {
+            nome = prompt('Digite o nome da disciplina\nDigite 0 para encerrar o programa')
+            if (nome == 0)
                 break;
             desc = prompt('Digite a descrição do conteúdo: ')
-                break;
-            freq = prompt('Digite a frequência:')
-            if (freq.toLowerCase() == 'sair')
-                break;
-            nota = prompt('Digite a nota mínima para a aprovação do aluno: ')
-            if (nota.toLowerCase() == 'sair')
-                break;
-            document.getElementById('retorno').innerHTML += 'Nome da disciplina: ' + nome + '<br>' + 'Descrição do conteúdo: ' + desc + '<br>' + 'Frequência: ' + freq + '<br>' + 'Nota mínima para a aprovação do aluno: ' + nota + '<br><br>';
+            freq = Number(prompt('Digite a frequência mínima para a aprovação do aluno: '))
+            while (isNaN(freq) || freq < 0) {
+                alert('Digite um número positvo')
+                freq = Number(prompt('Frequência mínima para a aprovação do aluno: '))
+            }
+            nota = Number(prompt('Digite a nota mínima para a aprovação do aluno: '))
+            while (isNaN(nota) || nota < 0) {
+                alert('Digite um número positvo')
+                nota = Number(prompt('Digite a nota mínima para a aprovação do aluno: '))
+            }
+            document.getElementById('retorno').innerHTML += 'Nome da disciplina: ' + nome + '<br>' + 'Descrição do conteúdo: ' + desc + '<br>' + 'Frequência mínima para a aprovação do aluno: ' + freq+ '%' + '<br>' + 'Nota mínima para a aprovação do aluno: ' + nota + '<br><br>';
         }
     </script>
 </body>

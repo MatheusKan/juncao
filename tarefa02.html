@@ -20,22 +20,25 @@ indeterminado de contribuintes.-->
         let renda2 = 0.00
         let dep = 0
         let aliq = 0
-        while (nome != 'sair' || cpf != 'sair' || renda != 'sair' || dep != 'sair') {
-            alert('Digite sair para encerrar o programa')
-            nome = prompt('Digite o nome do contribuinte: ')
-            if (nome.toLowerCase() == 'sair')
-                break;  
-            cpf = prompt('Digite o CPF: ')
-            if (cpf.toLowerCase() == 'sair')
+        while (true) {
+            nome = prompt('Digite o nome do contribuinte:\nDigite 0 para encerrar o programa')
+            if (nome == 0)
                 break;
-            renda = prompt('Digite a Renda anual: ')
-            if (renda.toLowerCase() == 'sair')
-                break;
-            renda = parseFloat(renda)
-            dep = prompt('Digite o número de dependentes: ')
-            if (dep.toLowerCase() == 'sair')
-                break;
-            dep = parseInt(dep)
+            cpf = Number(prompt('Digite o CPF: '))
+            while (cpf % 1 != 0 || cpf < 1) {
+                alert('Digite só números inteiros e positivos');
+                cpf = Number(prompt('Digite o CPF: '))
+            }
+            renda = Number(prompt('Digite a Renda anual: '))
+            while (isNaN(renda) || renda < 1) {
+                alert('Digite só números inteiros e positivos');
+                renda = Number(prompt('Digite a Renda anual: '))
+            }
+            dep = Number(prompt('Digite o número de dependentes: '))
+            while (dep % 1 != 0 || dep < 0) {
+                alert('Digite só números inteiros e positivos');
+                renda = Number(prompt('Digite o número de dependentes: '))
+            }
             renda2 = renda - (110 * dep)
             if (renda2 < 0) {
                 renda2 = 0

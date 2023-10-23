@@ -16,32 +16,48 @@ b) mostrar a idade média dos candidatos;
 c) mostrar o número total de candidatos e candidatas;
 d) mostrar os candidatos (homens e mulheres) maiores de idade que tenham  experiência no serviço-->
     <p id="retorno"></p>
+    <p id="resultado"></p>
     <script>
+        let media = 0
+        let i = 0
+        let contM = 0
+        let contF = 0
+        let idade2 = 0
         while (true) {
             let nc = Number(prompt('Digite o número do(a) candidato(a)\nDigite 0 para encerrar o programa: '))
             while (nc % 1 != 0 || nc < 0) {
                 alert('Digite só números inteiros e positivos');
                 nc = Number(prompt('Digite o número do(a) candidato(a): '));
             }
-            if(nc == 0)
+            if (nc == 0)
                 break;
             let idade = Number(prompt('Digite a idade do(a) candidato(a): '))
             while (idade % 1 != 0 || idade < 1) {
                 alert('Digite só números inteiros e positivos');
                 idade = Number(prompt('Digite a idade do(a) candidato(a): '));
             }
-            idade = idade + idade
+            i++
+            idade2 = idade2 + idade
+            media = idade2 / i
             let sexo = prompt('Digite o sexo do(a) candidato(a): ')
-            
+            while (sexo.toLowerCase() != "m" && sexo.toLowerCase() != 'f') {
+                alert('Digite M para masculino ou F para feminino')
+                sexo = prompt('Digite o sexo do(a) candidato(a): ')
+            }
+            if (sexo.toLowerCase() == 'm')
+                contM++
+            if (sexo.toLowerCase() == 'f')
+                contF++
             let ep = prompt('Digite com sim ou não a experiência do(a) candidato(a): ')
             while (ep.toLowerCase() != 'sim' && ep.toLowerCase() != 'não') {
                 alert('Digite só sim ou não');
                 ep = prompt('Digite a idade do(a) candidato(a): ');
             }
-
-            document.getElementById('retorno').innerHTML += idade
+            if (idade > 17 && ep.toLowerCase() == 'sim') {
+                document.getElementById('resultado').innerHTML += 'Candidatos maiores de idade e com experiência: ' + nc + ", "
+            }
         }
-
+        document.getElementById('retorno').innerHTML = 'A idade média dos candidatos é : ' + media + '<br>' + 'O total de candidatos é: ' + contM + '<br>' + 'E o total de candidatas é: ' + contF
     </script>
 </body>
 
