@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <!--1 - Cadastre e imprima os dados das disciplinas de uma escola: nome, descrição do 
+conteúdo, frequência e nota mínimas para aprovação do aluno. Até o pessoa desejar sair.-->
+    <p id="retorno"></p>
+    <script>
+        let nome = ''
+        let desc = ''
+        let freq = ''
+        let nota = ''
+        while (nome != 'sair' || freq != 'sair' || desc != 'sair' || nota != 'sair') {
+            alert('Digite sair para encerrar o programa')
+            nome = prompt('Digite o nome da disciplina: ')
+            if (nome.toLowerCase() == 'sair')
+                break;
+            desc = prompt('Digite a descrição do conteúdo: ')
+                break;
+            freq = prompt('Digite a frequência:')
+            if (freq.toLowerCase() == 'sair')
+                break;
+            nota = prompt('Digite a nota mínima para a aprovação do aluno: ')
+            if (nota.toLowerCase() == 'sair')
+                break;
+            document.getElementById('retorno').innerHTML += 'Nome da disciplina: ' + nome + '<br>' + 'Descrição do conteúdo: ' + desc + '<br>' + 'Frequência: ' + freq + '<br>' + 'Nota mínima para a aprovação do aluno: ' + nota + '<br><br>';
+        }
+    </script>
+</body>
+
+</html>

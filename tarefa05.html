@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutamento</title>
+</head>
+
+<body>
+    <!--5. Uma empresa decidiu fazer um recrutamento para preencher algumas vagas. Os
+candidatos serão cadastrados por computador. Faça um algoritmo para:
+
+a) ler o número do candidato, a idade, o sexo, a experiência profissional (Sim/Não);
+b) mostrar a idade média dos candidatos;
+c) mostrar o número total de candidatos e candidatas;
+d) mostrar os candidatos (homens e mulheres) maiores de idade que tenham  experiência no serviço-->
+    <p id="retorno"></p>
+    <script>
+        while (true) {
+            let nc = Number(prompt('Digite o número do(a) candidato(a)\nDigite 0 para encerrar o programa: '))
+            while (nc % 1 != 0 || nc < 0) {
+                alert('Digite só números inteiros e positivos');
+                nc = Number(prompt('Digite o número do(a) candidato(a): '));
+            }
+            if(nc == 0)
+                break;
+            let idade = Number(prompt('Digite a idade do(a) candidato(a): '))
+            while (idade % 1 != 0 || idade < 1) {
+                alert('Digite só números inteiros e positivos');
+                idade = Number(prompt('Digite a idade do(a) candidato(a): '));
+            }
+            idade = idade + idade
+            let sexo = prompt('Digite o sexo do(a) candidato(a): ')
+            
+            let ep = prompt('Digite com sim ou não a experiência do(a) candidato(a): ')
+            while (ep.toLowerCase() != 'sim' && ep.toLowerCase() != 'não') {
+                alert('Digite só sim ou não');
+                ep = prompt('Digite a idade do(a) candidato(a): ');
+            }
+
+            document.getElementById('retorno').innerHTML += idade
+        }
+
+    </script>
+</body>
+
+</html>

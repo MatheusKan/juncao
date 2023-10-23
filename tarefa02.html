@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imposto de renda</title>
+</head>
+
+<body>
+    <!--Na declaração de imposto de renda devem constar os dados:
+nome do contribuinte,  CPF, renda anual e número de dependentes.
+Faça um algoritmo para calcular os valores dos impostos que serão pagos por um número 
+indeterminado de contribuintes.-->
+    <p id="retorno"></p>
+    <script>
+        let nome = ''
+        let cpf = ''
+        let renda = 0.00
+        let renda2 = 0.00
+        let dep = 0
+        let aliq = 0
+        while (nome != 'sair' || cpf != 'sair' || renda != 'sair' || dep != 'sair') {
+            alert('Digite sair para encerrar o programa')
+            nome = prompt('Digite o nome do contribuinte: ')
+            if (nome.toLowerCase() == 'sair')
+                break;  
+            cpf = prompt('Digite o CPF: ')
+            if (cpf.toLowerCase() == 'sair')
+                break;
+            renda = prompt('Digite a Renda anual: ')
+            if (renda.toLowerCase() == 'sair')
+                break;
+            renda = parseFloat(renda)
+            dep = prompt('Digite o número de dependentes: ')
+            if (dep.toLowerCase() == 'sair')
+                break;
+            dep = parseInt(dep)
+            renda2 = renda - (110 * dep)
+            if (renda2 < 0) {
+                renda2 = 0
+            }
+            if (renda2 <= 900)
+                aliq = 0
+            else if (renda2 <= 5000)
+                aliq = renda2 * 0.05
+            else if (renda2 <= 10000)
+                aliq = renda2 * 0.1
+            else
+                aliq = renda2 * 0.15
+            document.getElementById('retorno').innerHTML += 'Nome do contribuinte: ' + nome + '<br>' + 'CPF: ' + cpf + '<br>' + 'Renda anual: ' + renda2 + '<br>' + 'Número de dependentes: ' + dep + '<br>' + 'Valor dos impostos: ' + aliq + '<br><br>';
+        }
+    </script>
+</body>
+
+</html>

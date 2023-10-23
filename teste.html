@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="retorno"></p>
+    <script>
+        let somaIdades = 0
+        while (true) {
+            let idade = Number(prompt('Digite a idade do(a) candidato(a): '))
+            while (idade % 1 != 0 || idade < 1) {
+                alert('Digite só números inteiros e positivos');
+                idade = Number(prompt('Digite a idade do(a) candidato(a): '));
+            }
+            let idade3 = prompt('oi')
+            let idade2 = 0
+            somaIdades += idade;
+            document.getElementById('retorno').innerHTML = idade
+            if(idade3 == 9)
+                break;
+        }
+    </script>
+</body>
+
+</html>
