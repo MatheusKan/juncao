@@ -22,18 +22,17 @@ conteúdo, frequência e nota mínimas para aprovação do aluno. Até o pessoa 
                 break;
             desc = prompt('Digite a descrição do conteúdo: ')
             freq = Number(prompt('Digite a frequência mínima para a aprovação do aluno: '))
-            while (isNaN(freq) || freq < 0) {
-                alert('Digite um número positvo')
+            while (isNaN(freq) || freq < 0 || freq > 100) {
+                alert('Digite um número entre 0 e 100')
                 freq = Number(prompt('Frequência mínima para a aprovação do aluno: '))
             }
             nota = Number(prompt('Digite a nota mínima para a aprovação do aluno: '))
-            while (isNaN(nota) || nota < 0) {
-                alert('Digite um número positvo')
+            while (isNaN(nota) || nota < 0 || nota > 10) {
+                alert('Digite um número entre 0 e 10')
                 nota = Number(prompt('Digite a nota mínima para a aprovação do aluno: '))
             }
             document.getElementById('retorno').innerHTML += 'Nome da disciplina: ' + nome + '<br>' + 'Descrição do conteúdo: ' + desc + '<br>' + 'Frequência mínima para a aprovação do aluno: ' + freq+ '%' + '<br>' + 'Nota mínima para a aprovação do aluno: ' + nota + '<br><br>';
         }
     </script>
 </body>
-
 </html>

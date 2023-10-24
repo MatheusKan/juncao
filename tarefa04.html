@@ -32,8 +32,7 @@ e) imprimir o total de alunos reprovados por falta e por nota.-->
         let mediafinal = 0
         let maiorMedia = -1
         let menorMedia = 11
-
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 70; i++) {
             let matricula = Number(prompt('Digite a matrícula do ' + i + 'º' + ' aluno:'))
             while (matricula % 1 !== 0 || matricula < 1) {
                 alert('Digite um número inteiro e maior que 0')
@@ -53,7 +52,7 @@ e) imprimir o total de alunos reprovados por falta e por nota.-->
             }
             let aulafreq = Number(prompt('Digite a quantidade de aulas frequentadas pelo ' + i + 'º aluno: '))
             while (isNaN(aulafreq) || aulafreq < 0 || aulafreq > 32) {
-                alert('Digite uma frequência positiva')
+                alert('Digite a quantidade de aulas frequentadas menor que 33 e maior ou igual a 0')
                 aulafreq = Number(prompt('Digite a quantidade de aulas frequentadas pelo ' + i + 'º aluno:'))
             }
             if (media >= 7 && (aulafreq / 32) >= 0.8) {
@@ -68,7 +67,7 @@ e) imprimir o total de alunos reprovados por falta e por nota.-->
 
             notas = []
             mediatotal += media
-            mediafinal = mediatotal / 3
+            mediafinal = mediatotal / 70
 
             if (media > maiorMedia) {
                 maiorMedia = media;

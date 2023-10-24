@@ -31,7 +31,7 @@ indeterminado de contribuintes.-->
             }
             renda = Number(prompt('Digite a Renda anual: '))
             while (isNaN(renda) || renda < 1) {
-                alert('Digite só números inteiros e positivos');
+                alert('Digite só números positivos');
                 renda = Number(prompt('Digite a Renda anual: '))
             }
             dep = Number(prompt('Digite o número de dependentes: '))
@@ -40,9 +40,8 @@ indeterminado de contribuintes.-->
                 renda = Number(prompt('Digite o número de dependentes: '))
             }
             renda2 = renda - (110 * dep)
-            if (renda2 < 0) {
+            if (renda2 < 0)
                 renda2 = 0
-            }
             if (renda2 <= 900)
                 aliq = 0
             else if (renda2 <= 5000)
@@ -51,7 +50,7 @@ indeterminado de contribuintes.-->
                 aliq = renda2 * 0.1
             else
                 aliq = renda2 * 0.15
-            document.getElementById('retorno').innerHTML += 'Nome do contribuinte: ' + nome + '<br>' + 'CPF: ' + cpf + '<br>' + 'Renda anual: ' + renda2 + '<br>' + 'Número de dependentes: ' + dep + '<br>' + 'Valor dos impostos: ' + aliq + '<br><br>';
+            document.getElementById('retorno').innerHTML += 'Nome do contribuinte: ' + nome + '<br>' + 'CPF: ' + cpf + '<br>' + 'Renda anual: ' + renda + '<br>' + 'Número de dependentes: ' + dep + '<br>' + 'Valor dos impostos: ' + aliq + '<br><br>';
         }
     </script>
 </body>

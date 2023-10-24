@@ -14,7 +14,7 @@ candidatos serão cadastrados por computador. Faça um algoritmo para:
 a) ler o número do candidato, a idade, o sexo, a experiência profissional (Sim/Não);
 b) mostrar a idade média dos candidatos;
 c) mostrar o número total de candidatos e candidatas;
-d) mostrar os candidatos (homens e mulheres) maiores de idade que tenham  experiência no serviço-->
+d) mostrar os candidatos (homens e mulheres) maiores de idade que tenham experiência no serviço-->
     <p id="retorno"></p>
     <p id="resultado"></p>
     <script>
@@ -51,7 +51,7 @@ d) mostrar os candidatos (homens e mulheres) maiores de idade que tenham  experi
             let ep = prompt('Digite com sim ou não a experiência do(a) candidato(a): ')
             while (ep.toLowerCase() != 'sim' && ep.toLowerCase() != 'não') {
                 alert('Digite só sim ou não');
-                ep = prompt('Digite a idade do(a) candidato(a): ');
+                ep = prompt('Digite com sim ou não a experiência do(a) candidato(a): ');
             }
             if (idade > 17 && ep.toLowerCase() == 'sim') {
                 document.getElementById('resultado').innerHTML += 'Candidatos maiores de idade e com experiência: ' + nc + ", "
